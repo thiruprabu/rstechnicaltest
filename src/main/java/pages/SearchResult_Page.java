@@ -354,6 +354,14 @@ public class SearchResult_Page extends GenericWrapper {
 	
 	
 	
+	/**
+	 * This method adds the product with the given stockNumber for given quantity to the basket.
+	 * If the product is not found in the search result page, it will throw exception.
+	 * 
+	 * @param stockNumber
+	 * @param quantity
+	 * @return
+	 */
 	public SearchResult_Page addToBasket(String stockNumber,String quantity){
 		
 		goToFirstPage();
@@ -392,6 +400,10 @@ public class SearchResult_Page extends GenericWrapper {
 	
 	
 	
+	/**
+	 * This method goes to basket from Search result page
+	 * @return
+	 */
 	public MyBasket_Page goToMyBasket(){
 		scrollTo(basket);
 		simpleUserAction(basket, UA_TYPE.CLICK, null);

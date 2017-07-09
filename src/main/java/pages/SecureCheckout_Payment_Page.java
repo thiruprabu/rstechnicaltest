@@ -9,7 +9,12 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import wrappers.GenericWrapper;
-
+/**
+ * Page class for the page : SecureCheckout_Payment_Page
+ * All the user actions to be performed on this page is created as reusable methods which will act on a repository of objects on this page. 
+ * 
+ * @author Thiru
+ */
 public class SecureCheckout_Payment_Page extends GenericWrapper {
 	
 	
@@ -50,6 +55,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 	
 	
 	
+	/**
+	 * This method validates the presence of CardNumber field. If not present, it will throw exception.
+	 * 
+	 * @return
+	 */
 	public SecureCheckout_Payment_Page validateCardNumberField(){
 		
 		if(cardNumberTextBoxes.size() != 4 || !cardNumberTextBoxes.get(0).isDisplayed() || !cardNumberTextBoxes.get(0).isEnabled()){
@@ -60,6 +70,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 	}
 	
 	
+	/**
+	 * This method validates the presence of CardName field. If not present, it will throw exception.
+	 * 
+	 * @return
+	 */
 	public SecureCheckout_Payment_Page validateCardNameField(){
 		
 		if(!cardNameTextBox.isDisplayed() || !cardNameTextBox.isEnabled()){
@@ -70,6 +85,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 	}
 	
 	
+	/**
+	 * This method validates the presence of CardHolderName field. If not present, it will throw exception.
+	 * 
+	 * @return
+	 */
 	public SecureCheckout_Payment_Page validateCardHolderNameField(){
 		
 		if(!cardHolderNameTextBox.isDisplayed() || !cardHolderNameTextBox.isEnabled()){
@@ -79,7 +99,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 		return this;
 	}
 	
-	
+	/**
+	 * This method validates the presence of expiryDate field. If not present, it will throw exception.
+	 * 
+	 * @return
+	 */
 	public SecureCheckout_Payment_Page validateExpiryDateField(){
 		
 		if(!expiryDateTextBox.isDisplayed() || !expiryDateTextBox.isEnabled()){
@@ -90,7 +114,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 	}
 	
 	
-	
+	/**
+	 * This method validates the presence of SecurityCode field. If not present, it will throw exception.
+	 * 
+	 * @return
+	 */
 	public SecureCheckout_Payment_Page validateSecurityCodeField(){
 		
 		if(!securityCodeTextBox.isDisplayed() || !securityCodeTextBox.isEnabled()){

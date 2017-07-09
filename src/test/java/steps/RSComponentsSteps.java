@@ -23,6 +23,7 @@ public class RSComponentsSteps  extends GenericWrapper implements En  {
 			
 			new Home_Page()
 			.searchProduct("Backplane Connectors");
+			
 
 		});
 
@@ -193,7 +194,7 @@ public class RSComponentsSteps  extends GenericWrapper implements En  {
 	@cucumber.api.java.Before
 	public void beforeScenario(Scenario scenario) {
 		
-		Reporter.startResult();
+		Reporter.startResult(scenario.getName());
 		Reporter.startTestCase(scenario.getName(), scenario.getName());
 		
 		invokeApp("firefox");
@@ -208,6 +209,7 @@ public class RSComponentsSteps  extends GenericWrapper implements En  {
 			scenario.embed(screenshot, "image/png");
 		}
 		
+		Reporter.endResult();
 	    quitDriver();
 	}
 

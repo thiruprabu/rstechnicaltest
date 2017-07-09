@@ -13,6 +13,12 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 
+/**
+ * Reporter class which takes care of Extent reports
+ * 
+ * @author Thiru
+ *
+ */
 public class Reporter extends GenericWrapper{
 	
 	private static ExtentTest test;
@@ -22,7 +28,7 @@ public class Reporter extends GenericWrapper{
 
 		long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L;
         try {
-			FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE) , new File("src/test/resources/reportsextentReports/images/"+number+".jpg"));
+			FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE) , new File("src/test/resources/reports/extentReports/images/"+number+".jpg"));
 		} catch (WebDriverException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -31,9 +37,9 @@ public class Reporter extends GenericWrapper{
 		
 		// Write if it is successful or failure or information
 		if(status.toUpperCase().equals("PASS")){
-			test.log(LogStatus.PASS, desc+test.addScreenCapture("src/test/resources/reportsextentReports/images/"+number+".jpg"));
+			test.log(LogStatus.PASS, desc+test.addScreenCapture("./src/test/resources/reports/extentReports/images/"+number+".jpg"));
 		}else if(status.toUpperCase().equals("FAIL")){
-			test.log(LogStatus.FAIL, desc+test.addScreenCapture("src/test/resources/reportsextentReports/images/"+number+".jpg"));
+			test.log(LogStatus.FAIL, desc+test.addScreenCapture("./src/test/resources/reports/extentReports/images/"+number+".jpg"));
 			throw new RuntimeException("FAILED");
 		}else if(status.toUpperCase().equals("INFO")){
 			test.log(LogStatus.INFO, desc);
@@ -41,15 +47,26 @@ public class Reporter extends GenericWrapper{
 	}
 
 	
-	public static void startResult(){
-		extent = new ExtentReports("src/test/resources/reportsextentReports/result.html", false);
+	/**
+	 * Starts a new report in non-overwrite mode
+	 */
+	public static void startResult(String reportName){
+		extent = new ExtentReports("src/test/resources/reports/extentReports/"+reportName+".html", true);
 		extent.loadConfig(new File("src/test/resources/extent-config.xml"));
 	}
 	
+	/**
+	 * Starts a new test case with the given testCaseName and testDescription
+	 * @param testCaseName
+	 * @param testDescription
+	 */
 	public static void startTestCase(String testCaseName, String testDescription){
 		test = extent.startTest(testCaseName, testDescription);
 	}
 
+	/**
+	 * Ends a test report.
+	 */
 	public static void endResult(){
 		extent.endTest(test);
 		extent.flush();

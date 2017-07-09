@@ -110,6 +110,13 @@ public class MyBasket_Page extends GenericWrapper {
 	
 	
 	
+	/**
+	 * This method validates if the product with the given stockNumber is not present in the basket.
+	 * If it is present it will throw exception.
+	 * 
+	 * @param stockNumber
+	 * @return
+	 */
 	public MyBasket_Page validateProductNotAddedToBasket(String stockNumber){
 		
 		setImplicitlyWait(3);

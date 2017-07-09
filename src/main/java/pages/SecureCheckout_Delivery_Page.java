@@ -66,6 +66,15 @@ public class SecureCheckout_Delivery_Page extends GenericWrapper {
 	
 	
 	
+	/**
+	 * This method fills in all the details such as title, firstName, lastName, contactNumber in their respective feilds in Delivery page.
+	 *  
+	 * @param title
+	 * @param firstName
+	 * @param lastName
+	 * @param contactNumber
+	 * @return
+	 */
 	public SecureCheckout_Delivery_Page fillPersonDetails(String title, String firstName, String lastName, String contactNumber){
 		
 		simpleUserAction(titileDropdown, UA_TYPE.SELECT_DROPDOWN_OPTION, title);
@@ -78,6 +87,16 @@ public class SecureCheckout_Delivery_Page extends GenericWrapper {
 	
 	
 	
+	/**
+	 * This method fills in address in their respective fields. 
+	 * 
+	 * @param companyName
+	 * @param addressLine1
+	 * @param town
+	 * @param county
+	 * @param postcode
+	 * @return
+	 */
 	public SecureCheckout_Delivery_Page fillDeliveryInformation(String companyName, String addressLine1, String town, String county, String postcode){
 		
 		simpleUserAction(companyNameTextBox, UA_TYPE.CLICK_AND_TYPE, companyName);
@@ -89,6 +108,11 @@ public class SecureCheckout_Delivery_Page extends GenericWrapper {
 	}
 	
 	
+	/**
+	 * This method clicks on continue to payment button.
+	 * 
+	 * @return
+	 */
 	public SecureCheckout_Payment_Page continueToPayment(){
 		simpleUserAction(continueToPayment, UA_TYPE.CLICK, null);
 		return new SecureCheckout_Payment_Page();

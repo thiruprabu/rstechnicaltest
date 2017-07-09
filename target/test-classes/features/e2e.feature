@@ -1,5 +1,5 @@
 #Author: thirumalaiprabu@gmail.com
-#Keywords Summary : This feature file contains 2 end to end test scenarios from HomePage to Secure checkout page.
+#Keywords Summary : This feature file contains 2 end to end test scenarios from HomePage to Secure checkout page of rscomponents.
 
 Feature: End to End tests
 

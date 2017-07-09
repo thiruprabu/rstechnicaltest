@@ -30,6 +30,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utils.BY_TYPE;
+import utils.Reporter;
 import utils.TestWork;
 import utils.UA_TYPE;
 
@@ -118,10 +119,11 @@ public class GenericWrapper {
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 			driver.get(applicationURL);
-
+			Reporter.reportStep("The browser:" + browser + " launched successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			Reporter.reportStep("The browser:" + browser + " could not be launched", "FAIL");
 		}
 		return bReturn;
 	}
@@ -207,10 +209,11 @@ public class GenericWrapper {
         List<WebElement> matchedElements = driver.findElements(By.xpath(".//*[text()[contains(.,'" + text + "')]]"));
 
         if(matchedElements.size() > 0) {
-
+        	Reporter.reportStep("The text:" + text + " found in the current page", "PASS");
             return true;
 
         } else {
+        	Reporter.reportStep("The text:" + text + " found in the current page", "FAIL");
         	throw new RuntimeException("The expected text not found in the page : " + text);
         }
     }
@@ -324,33 +327,50 @@ public class GenericWrapper {
 
         delay(100);
 
-        switch (uaType) {
+        try {
+			switch (uaType) {
 
-    	        case TYPE:
-    	        	element.clear();
-    	            element.sendKeys(value);
-    	            break;
+			        case TYPE:
+			        	element.clear();
+			            element.sendKeys(value);
+			            break;
 
-    	        case CLICK_AND_TYPE:
-    	        	element.clear();
-    	            element.click();
-    	            element.sendKeys(value);
-    	            break;
+			        case CLICK_AND_TYPE:
+			        	element.clear();
+			            element.click();
+			            element.sendKeys(value);
+			            break;
 
-    	        case CLICK:
-    	            addExplicitWait(element, "clickable", 30); // clickable,presence,visibility
-    	            element.click();
-    	            break;
+			        case CLICK:
+			            addExplicitWait(element, "clickable", 30); // clickable,presence,visibility
+			            element.click();
+			            break;
 
-    	        case SELECT_DROPDOWN_OPTION:
-    	            selectDropDownByVisibleText(element, value);
-    	            break;
+			        case SELECT_DROPDOWN_OPTION:
+			            selectDropDownByVisibleText(element, value);
+			            break;
 
-	        }
+			    }
+			Reporter.reportStep("The USERACTION : "+uaType.toString()+" passed", "PASS");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			Reporter.reportStep("The USERACTION : "+uaType.toString()+" failed", "FAIL");
+		}
 
-        if (testWork != null){
-            testWork.test();
-        }
+        
+        
+        
+        
+        try {
+			if (testWork != null){
+			    testWork.test();
+			    Reporter.reportStep("The TestWork after user action : "+uaType.toString()+" passed", "PASS");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			Reporter.reportStep("The TestWork after user action : "+uaType.toString()+" failed", "FAIL");
+		}
 
 
     }
