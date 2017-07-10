@@ -2,6 +2,7 @@ package pages;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,7 @@ import wrappers.GenericWrapper;
  */
 public class SecureCheckout_Payment_Page extends GenericWrapper {
 	
+	final static Logger logger = Logger.getLogger(SecureCheckout_Payment_Page.class);
 	
 	private String pageHeader = "Select card type";
 	
@@ -49,8 +51,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 		addExplicitWait(continueToOrderReview, "clickable", 30);
 		
 		if(!(softTextCheck(pageHeader))){
+			logger.fatal("The expected page headers : " + pageHeader +" not found on the current page. This is NOT Secure Checkout Payment Page!");
         	throw new RuntimeException("The expected page headers : " + pageHeader +" not found on the current page. This is NOT Secure Checkout Payment Page!");
         }
+		
+		logger.info("SecureCheckout_Payment_Page constructor passed.");
 	}
 	
 	
@@ -63,9 +68,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 	public SecureCheckout_Payment_Page validateCardNumberField(){
 		
 		if(cardNumberTextBoxes.size() != 4 || !cardNumberTextBoxes.get(0).isDisplayed() || !cardNumberTextBoxes.get(0).isEnabled()){
+			logger.fatal("Card number fields validation Failed!");
 			throw new RuntimeException("Card number fields validation Failed!");
 		}
 		
+		logger.info("validateCardNumberField in SecureCheckout_Payment_Page page passed.");
 		return this;
 	}
 	
@@ -78,9 +85,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 	public SecureCheckout_Payment_Page validateCardNameField(){
 		
 		if(!cardNameTextBox.isDisplayed() || !cardNameTextBox.isEnabled()){
+			logger.fatal("Card name field validation Failed!");
 			throw new RuntimeException("Card name field validation Failed!");
 		}
 		
+		logger.info("validateCardNameField in SecureCheckout_Payment_Page page passed.");
 		return this;
 	}
 	
@@ -93,9 +102,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 	public SecureCheckout_Payment_Page validateCardHolderNameField(){
 		
 		if(!cardHolderNameTextBox.isDisplayed() || !cardHolderNameTextBox.isEnabled()){
+			logger.fatal("Card holder name field validation Failed!");
 			throw new RuntimeException("Card holder name field validation Failed!");
 		}
 		
+		logger.info("validateCardHolderNameField in SecureCheckout_Payment_Page page passed.");
 		return this;
 	}
 	
@@ -107,9 +118,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 	public SecureCheckout_Payment_Page validateExpiryDateField(){
 		
 		if(!expiryDateTextBox.isDisplayed() || !expiryDateTextBox.isEnabled()){
+			logger.fatal("Expiry date field validation Failed!");
 			throw new RuntimeException("Expiry date field validation Failed!");
 		}
 		
+		logger.info("validateExpiryDateField in SecureCheckout_Payment_Page page passed.");
 		return this;
 	}
 	
@@ -122,8 +135,11 @@ public class SecureCheckout_Payment_Page extends GenericWrapper {
 	public SecureCheckout_Payment_Page validateSecurityCodeField(){
 		
 		if(!securityCodeTextBox.isDisplayed() || !securityCodeTextBox.isEnabled()){
+			logger.fatal("Security code field validation Failed!");
 			throw new RuntimeException("Security code field validation Failed!");
 		}
+		
+		logger.info("validateSecurityCodeField in SecureCheckout_Payment_Page page passed.");
 		
 		return this;
 	}

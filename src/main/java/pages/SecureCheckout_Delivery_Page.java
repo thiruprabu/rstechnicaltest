@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -14,6 +15,8 @@ import wrappers.GenericWrapper;
  * @author Thiru
  */
 public class SecureCheckout_Delivery_Page extends GenericWrapper {
+	
+	final static Logger logger = Logger.getLogger(SecureCheckout_Delivery_Page.class);
 	
 	private String pageHeader = "First name";
 	
@@ -60,8 +63,11 @@ public class SecureCheckout_Delivery_Page extends GenericWrapper {
 		addExplicitWait(continueToPayment, "clickable", 30);
 		
 		if(!(softTextCheck(pageHeader))){
+			logger.fatal("The expected page headers : " + pageHeader +" not found on the current page. This is NOT Secure Checkout Delivery Page!");
         	throw new RuntimeException("The expected page headers : " + pageHeader +" not found on the current page. This is NOT Secure Checkout Delivery Page!");
         }
+		
+		logger.info("SecureCheckout_Delivery_Page constructor passed.");
 	}
 	
 	
@@ -77,10 +83,17 @@ public class SecureCheckout_Delivery_Page extends GenericWrapper {
 	 */
 	public SecureCheckout_Delivery_Page fillPersonDetails(String title, String firstName, String lastName, String contactNumber){
 		
-		simpleUserAction(titileDropdown, UA_TYPE.SELECT_DROPDOWN_OPTION, title);
-		simpleUserAction(firstNameTextBox, UA_TYPE.CLICK_AND_TYPE, firstName);
-		simpleUserAction(lastNameTextBox, UA_TYPE.CLICK_AND_TYPE, lastName);
-		simpleUserAction(contactNumberTextBox, UA_TYPE.CLICK_AND_TYPE, contactNumber);
+		try {
+			simpleUserAction(titileDropdown, UA_TYPE.SELECT_DROPDOWN_OPTION, title);
+			simpleUserAction(firstNameTextBox, UA_TYPE.CLICK_AND_TYPE, firstName);
+			simpleUserAction(lastNameTextBox, UA_TYPE.CLICK_AND_TYPE, lastName);
+			simpleUserAction(contactNumberTextBox, UA_TYPE.CLICK_AND_TYPE, contactNumber);
+		} catch (Exception e) {
+			logger.fatal("Cannot fill person details in Delivery page!");
+        	throw new RuntimeException("Cannot fill person details in Delivery page!");
+		}
+		
+		logger.info("fillPersonDetails in SecureCheckout_Delivery_Page page passed.");
 		return this;
 	}
 	
@@ -99,11 +112,18 @@ public class SecureCheckout_Delivery_Page extends GenericWrapper {
 	 */
 	public SecureCheckout_Delivery_Page fillDeliveryInformation(String companyName, String addressLine1, String town, String county, String postcode){
 		
-		simpleUserAction(companyNameTextBox, UA_TYPE.CLICK_AND_TYPE, companyName);
-		simpleUserAction(addressLine1TextBox, UA_TYPE.CLICK_AND_TYPE, addressLine1);
-		simpleUserAction(townTextBox, UA_TYPE.CLICK_AND_TYPE, town);
-		simpleUserAction(countyDropdown, UA_TYPE.SELECT_DROPDOWN_OPTION, county);
-		simpleUserAction(postcodeTextBox, UA_TYPE.CLICK_AND_TYPE, postcode);
+		try {
+			simpleUserAction(companyNameTextBox, UA_TYPE.CLICK_AND_TYPE, companyName);
+			simpleUserAction(addressLine1TextBox, UA_TYPE.CLICK_AND_TYPE, addressLine1);
+			simpleUserAction(townTextBox, UA_TYPE.CLICK_AND_TYPE, town);
+			simpleUserAction(countyDropdown, UA_TYPE.SELECT_DROPDOWN_OPTION, county);
+			simpleUserAction(postcodeTextBox, UA_TYPE.CLICK_AND_TYPE, postcode);
+		} catch (Exception e) {
+			logger.fatal("Cannot fill delivery information details in Delivery page!");
+        	throw new RuntimeException("Cannot fill delivery information details in Delivery page!");
+		}
+		
+		logger.info("fillDeliveryInformation in SecureCheckout_Delivery_Page page passed.");
 		return this;
 	}
 	
@@ -114,7 +134,14 @@ public class SecureCheckout_Delivery_Page extends GenericWrapper {
 	 * @return
 	 */
 	public SecureCheckout_Payment_Page continueToPayment(){
-		simpleUserAction(continueToPayment, UA_TYPE.CLICK, null);
+		try {
+			simpleUserAction(continueToPayment, UA_TYPE.CLICK, null);
+		} catch (Exception e) {
+			logger.fatal("Cannot continue to payment from delivery page!");
+        	throw new RuntimeException("Cannot continue to payment from delivery page!");
+		}
+		
+		logger.info("continueToPayment in SecureCheckout_Delivery_Page page passed.");
 		return new SecureCheckout_Payment_Page();
 	}
 

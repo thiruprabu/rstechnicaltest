@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -17,7 +18,7 @@ import wrappers.GenericWrapper;
  */
 public class Home_Page extends GenericWrapper {
 	
-	
+	final static Logger logger = Logger.getLogger(Home_Page.class);
 	private String pageHeader = "Log In";
 	
 	@CacheLookup
@@ -38,8 +39,11 @@ public class Home_Page extends GenericWrapper {
 		PageFactory.initElements(driver, this);
 		
 		if(!(softTextCheck(pageHeader))){
+			logger.fatal("The expected page header : " + pageHeader + " not found on the current page. This is NOT HomePage!");
         	throw new RuntimeException("The expected page header : " + pageHeader + " not found on the current page. This is NOT HomePage!");
         } 
+		
+		logger.info("Home_Page() constructor passed.");
 	}
 	
 
@@ -51,8 +55,15 @@ public class Home_Page extends GenericWrapper {
 	 */
 	public SearchResult_Page searchProduct(String searchKeyword){
 	
-		simpleUserAction(searchTextBox, UA_TYPE.CLICK_AND_TYPE, searchKeyword);
-		simpleUserAction(searchButton, UA_TYPE.CLICK, null);
+		try {
+			simpleUserAction(searchTextBox, UA_TYPE.CLICK_AND_TYPE, searchKeyword);
+			simpleUserAction(searchButton, UA_TYPE.CLICK, null);
+		} catch (Exception e) {
+			logger.fatal("Search product on Home Page failed!");
+        	throw new RuntimeException("Search product on Home Page failed!");
+		}
+		
+		logger.info("searchProduct in HomePage passed.");
 		return new SearchResult_Page();
 	}
 	

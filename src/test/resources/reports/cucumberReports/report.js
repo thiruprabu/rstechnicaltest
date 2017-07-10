@@ -7,7 +7,7 @@ formatter.feature({
     },
     {
       "line": 2,
-      "value": "#Keywords Summary : This feature file contains 2 end to end test scenarios from HomePage to Secure checkout page."
+      "value": "#Keywords Summary : This feature file contains 2 end to end test scenarios from HomePage to Secure checkout page of rscomponents."
     }
   ],
   "line": 4,
@@ -17,14 +17,14 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 13163301697,
+  "duration": 12784726937,
   "status": "passed"
 });
 formatter.scenario({
   "line": 7,
-  "name": "Order one product",
+  "name": "Search for a product, add to basket and checkout",
   "description": "",
-  "id": "end-to-end-tests;order-one-product",
+  "id": "end-to-end-tests;search-for-a-product,-add-to-basket-and-checkout",
   "type": "scenario",
   "keyword": "Scenario"
 });
@@ -70,10 +70,10 @@ formatter.match({
       "offset": 41
     }
   ],
-  "location": "RSComponentsSteps.java:56"
+  "location": "RSComponentsSteps.java:57"
 });
 formatter.result({
-  "duration": 5795175338,
+  "duration": 6127106266,
   "status": "passed"
 });
 formatter.match({
@@ -87,17 +87,17 @@ formatter.match({
       "offset": 46
     }
   ],
-  "location": "RSComponentsSteps.java:105"
+  "location": "RSComponentsSteps.java:106"
 });
 formatter.result({
-  "duration": 23148093213,
+  "duration": 24422605327,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:123"
+  "location": "RSComponentsSteps.java:124"
 });
 formatter.result({
-  "duration": 6207699133,
+  "duration": 5928476235,
   "status": "passed"
 });
 formatter.match({
@@ -107,10 +107,10 @@ formatter.match({
       "offset": 40
     }
   ],
-  "location": "RSComponentsSteps.java:154"
+  "location": "RSComponentsSteps.java:155"
 });
 formatter.result({
-  "duration": 483276905,
+  "duration": 542591899,
   "status": "passed"
 });
 formatter.match({
@@ -120,104 +120,104 @@ formatter.match({
       "offset": 63
     }
   ],
-  "location": "RSComponentsSteps.java:113"
+  "location": "RSComponentsSteps.java:114"
 });
 formatter.result({
-  "duration": 6724146214,
+  "duration": 6537646417,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:131"
+  "location": "RSComponentsSteps.java:132"
 });
 formatter.result({
-  "duration": 10886771157,
+  "duration": 10728575476,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:141"
+  "location": "RSComponentsSteps.java:142"
 });
 formatter.result({
-  "duration": 889817319,
+  "duration": 1111951847,
   "status": "passed"
 });
 formatter.after({
-  "duration": 960589677,
+  "duration": 1470321713,
   "status": "passed"
 });
 formatter.before({
-  "duration": 10501632409,
+  "duration": 10693047837,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 19,
-  "name": "End to End test 2",
+  "line": 17,
+  "name": "Search and add multiple products to basket, modify basket and checkout",
   "description": "",
-  "id": "end-to-end-tests;end-to-end-test-2",
+  "id": "end-to-end-tests;search-and-add-multiple-products-to-basket,-modify-basket-and-checkout",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
-  "line": 20,
+  "line": 18,
   "name": "I am on Search result page by searching \"GLS LED Lamps\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 21,
+  "line": 19,
   "name": "I add product with stock number \"126-2170\" X \"5\" to basket",
   "keyword": "When "
 });
 formatter.step({
-  "line": 22,
+  "line": 20,
   "name": "I add product with stock number \"123-7945\" X \"8\" to basket",
   "keyword": "When "
 });
 formatter.step({
-  "line": 23,
+  "line": 21,
   "name": "I go to MyBasket from Search results",
   "keyword": "And "
 });
 formatter.step({
-  "line": 24,
+  "line": 22,
   "name": "I should see product with stock number \"126-2170\" in the Basket",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 25,
+  "line": 23,
   "name": "I should see product with stock number \"123-7945\" in the Basket",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 26,
+  "line": 24,
   "name": "I remove product with stock number \"126-2170\" from the basket",
   "keyword": "When "
 });
 formatter.step({
-  "line": 27,
+  "line": 25,
   "name": "I should not see product with stock number \"126-2170\" in the Basket",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 28,
+  "line": 26,
   "name": "I add product with stock number \"786-9083\" X \"20\" in the basket",
   "keyword": "When "
 });
 formatter.step({
-  "line": 29,
+  "line": 27,
   "name": "I should see product with stock number \"786-9083\" in the Basket",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 30,
+  "line": 28,
   "name": "I Checkout securely from MyBasket as guest user with email id \"test@test889.com\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 31,
+  "line": 29,
   "name": "I provide necessary delivery information and Continue to Payment",
   "keyword": "And "
 });
 formatter.step({
-  "line": 32,
+  "line": 30,
   "name": "I should see fields related to payments in Secure Checkout Payment page",
   "keyword": "Then "
 });
@@ -228,10 +228,10 @@ formatter.match({
       "offset": 41
     }
   ],
-  "location": "RSComponentsSteps.java:56"
+  "location": "RSComponentsSteps.java:57"
 });
 formatter.result({
-  "duration": 4799669707,
+  "duration": 5444040629,
   "status": "passed"
 });
 formatter.match({
@@ -245,10 +245,10 @@ formatter.match({
       "offset": 46
     }
   ],
-  "location": "RSComponentsSteps.java:105"
+  "location": "RSComponentsSteps.java:106"
 });
 formatter.result({
-  "duration": 22805059485,
+  "duration": 23916678985,
   "status": "passed"
 });
 formatter.match({
@@ -262,17 +262,17 @@ formatter.match({
       "offset": 46
     }
   ],
-  "location": "RSComponentsSteps.java:105"
+  "location": "RSComponentsSteps.java:106"
 });
 formatter.result({
-  "duration": 18824541372,
+  "duration": 19281265446,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:123"
+  "location": "RSComponentsSteps.java:124"
 });
 formatter.result({
-  "duration": 5622018366,
+  "duration": 6701820132,
   "status": "passed"
 });
 formatter.match({
@@ -282,10 +282,10 @@ formatter.match({
       "offset": 40
     }
   ],
-  "location": "RSComponentsSteps.java:154"
+  "location": "RSComponentsSteps.java:155"
 });
 formatter.result({
-  "duration": 550124245,
+  "duration": 631736474,
   "status": "passed"
 });
 formatter.match({
@@ -295,10 +295,10 @@ formatter.match({
       "offset": 40
     }
   ],
-  "location": "RSComponentsSteps.java:154"
+  "location": "RSComponentsSteps.java:155"
 });
 formatter.result({
-  "duration": 457366627,
+  "duration": 629034878,
   "status": "passed"
 });
 formatter.match({
@@ -308,11 +308,12 @@ formatter.match({
       "offset": 36
     }
   ],
-  "location": "RSComponentsSteps.java:166"
+  "location": "RSComponentsSteps.java:167"
 });
 formatter.result({
-  "duration": 5312477408,
-  "status": "passed"
+  "duration": 21944518740,
+  "error_message": "java.lang.RuntimeException: Remove item from basket failed!\r\n\tat pages.MyBasket_Page.removeItemFromBasket(MyBasket_Page.java:115)\r\n\tat steps.RSComponentsSteps.lambda$16(RSComponentsSteps.java:170)\r\n\tat ✽.When I remove product with stock number \"126-2170\" from the basket(e2e.feature:24)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -321,11 +322,10 @@ formatter.match({
       "offset": 44
     }
   ],
-  "location": "RSComponentsSteps.java:173"
+  "location": "RSComponentsSteps.java:174"
 });
 formatter.result({
-  "duration": 4524625870,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -338,11 +338,10 @@ formatter.match({
       "offset": 46
     }
   ],
-  "location": "RSComponentsSteps.java:180"
+  "location": "RSComponentsSteps.java:181"
 });
 formatter.result({
-  "duration": 2456743382,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -351,11 +350,10 @@ formatter.match({
       "offset": 40
     }
   ],
-  "location": "RSComponentsSteps.java:154"
+  "location": "RSComponentsSteps.java:155"
 });
 formatter.result({
-  "duration": 716863219,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -364,28 +362,26 @@ formatter.match({
       "offset": 63
     }
   ],
-  "location": "RSComponentsSteps.java:113"
+  "location": "RSComponentsSteps.java:114"
 });
 formatter.result({
-  "duration": 6590690978,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:131"
+  "location": "RSComponentsSteps.java:132"
 });
 formatter.result({
-  "duration": 9996561567,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:141"
+  "location": "RSComponentsSteps.java:142"
 });
 formatter.result({
-  "duration": 1219495360,
-  "status": "passed"
+  "status": "skipped"
 });
+formatter.embedding("image/png", "embedded0.png");
 formatter.after({
-  "duration": 830587501,
+  "duration": 1132290036,
   "status": "passed"
 });
 formatter.uri("searchPage.feature");
@@ -407,8 +403,9 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 11117926854,
-  "status": "passed"
+  "duration": 8544798447,
+  "error_message": "java.lang.RuntimeException: FAILED\r\n\tat utils.Reporter.reportStep(Reporter.java:45)\r\n\tat wrappers.GenericWrapper.invokeApp(GenericWrapper.java:126)\r\n\tat steps.RSComponentsSteps.beforeScenario(RSComponentsSteps.java:200)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\n\tat java.lang.reflect.Method.invoke(Unknown Source)\r\n\tat cucumber.runtime.Utils$1.call(Utils.java:40)\r\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\r\n\tat cucumber.runtime.Utils.invoke(Utils.java:34)\r\n\tat cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)\r\n\tat cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:224)\r\n\tat cucumber.runtime.Runtime.runHooks(Runtime.java:212)\r\n\tat cucumber.runtime.Runtime.runBeforeHooks(Runtime.java:202)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:40)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:100)\r\n\tat org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)\r\n\tat org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)\r\n",
+  "status": "failed"
 });
 formatter.scenario({
   "line": 6,
@@ -442,8 +439,7 @@ formatter.match({
   "location": "RSComponentsSteps.java:22"
 });
 formatter.result({
-  "duration": 5272212866,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -452,11 +448,10 @@ formatter.match({
       "offset": 25
     }
   ],
-  "location": "RSComponentsSteps.java:84"
+  "location": "RSComponentsSteps.java:85"
 });
 formatter.result({
-  "duration": 1496489772,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -465,11 +460,10 @@ formatter.match({
       "offset": 27
     }
   ],
-  "location": "RSComponentsSteps.java:91"
+  "location": "RSComponentsSteps.java:92"
 });
 formatter.result({
-  "duration": 3608022112,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -478,164 +472,13 @@ formatter.match({
       "offset": 14
     }
   ],
-  "location": "RSComponentsSteps.java:98"
+  "location": "RSComponentsSteps.java:99"
 });
 formatter.result({
-  "duration": 1920803250,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 698667858,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 10970252473,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 14,
-  "name": "Sort search results by price",
-  "description": "",
-  "id": "search-filter-page-tests;sort-search-results-by-price",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "line": 15,
-  "name": "I am on Search result page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 16,
-  "name": "I sort by price in \"ascending\" order",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 17,
-  "name": "The results should sort by price in \"ascending\" order successfully",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "RSComponentsSteps.java:22"
-});
-formatter.result({
-  "duration": 6160123494,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "ascending",
-      "offset": 20
-    }
-  ],
-  "location": "RSComponentsSteps.java:31"
-});
-formatter.result({
-  "duration": 1756193087,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "ascending",
-      "offset": 37
-    }
-  ],
-  "location": "RSComponentsSteps.java:44"
-});
-formatter.result({
-  "duration": 2481749782,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1232790994,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 10268002210,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 21,
-  "name": "Filter by Brand",
-  "description": "",
-  "id": "search-filter-page-tests;filter-by-brand",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "line": 22,
-  "name": "I am on Search result page by searching \"Tape Measures\"",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 23,
-  "name": "I filter by \"Brand\" - \"Stanley\"",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 24,
-  "name": "Each item displayed in Results should be of Brand \"Stanley\"",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Number of items displayed in Results should be equal to the number displayed against the brand in the filter selection window",
-  "keyword": "And "
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Tape Measures",
-      "offset": 41
-    }
-  ],
-  "location": "RSComponentsSteps.java:56"
-});
-formatter.result({
-  "duration": 5238059511,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Brand",
-      "offset": 13
-    },
-    {
-      "val": "Stanley",
-      "offset": 23
-    }
-  ],
-  "location": "RSComponentsSteps.java:63"
-});
-formatter.result({
-  "duration": 3804428156,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Stanley",
-      "offset": 51
-    }
-  ],
-  "location": "RSComponentsSteps.java:70"
-});
-formatter.result({
-  "duration": 3836819180,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RSComponentsSteps.java:77"
-});
-formatter.result({
-  "duration": 2751982045,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 694385599,
-  "status": "passed"
-});
+  "duration": 14363343,
+  "error_message": "org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection\nBuild info: version: \u00273.4.0\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027DELL-PC\u0027, ip: \u0027192.168.1.13\u0027, os.name: \u0027Windows 7\u0027, os.arch: \u0027amd64\u0027, os.version: \u00276.1\u0027, java.version: \u00271.8.0_131\u0027\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities [{moz:profile\u003dC:\\Users\\DELL\\AppData\\Local\\Temp\\rust_mozprofile.yEHZhdM69Liu, rotatable\u003dfalse, timeouts\u003d{implicit\u003d0.0, pageLoad\u003d300000.0, script\u003d30000.0}, pageLoadStrategy\u003dnormal, platform\u003dANY, specificationLevel\u003d0.0, moz:accessibilityChecks\u003dfalse, acceptInsecureCerts\u003dfalse, browserVersion\u003d54.0, platformVersion\u003d6.1, moz:processID\u003d3904.0, browserName\u003dfirefox, javascriptEnabled\u003dtrue, platformName\u003dwindows_nt}]\nSession ID: 9ffd3a28-2ce5-4f46-8c59-822cd11daf06\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:382)\r\n\tat steps.RSComponentsSteps.afterScenario(RSComponentsSteps.java:208)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\n\tat java.lang.reflect.Method.invoke(Unknown Source)\r\n\tat cucumber.runtime.Utils$1.call(Utils.java:40)\r\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\r\n\tat cucumber.runtime.Utils.invoke(Utils.java:34)\r\n\tat cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)\r\n\tat cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:224)\r\n\tat cucumber.runtime.Runtime.runHooks(Runtime.java:212)\r\n\tat cucumber.runtime.Runtime.runAfterHooks(Runtime.java:206)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:100)\r\n\tat org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)\r\n\tat org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)\r\n",
+  "status": "failed"
 });

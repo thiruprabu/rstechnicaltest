@@ -7,7 +7,7 @@ formatter.feature({
     },
     {
       "line": 2,
-      "value": "#Keywords Summary : This feature file contains 2 end to end test scenarios from HomePage to Secure checkout page."
+      "value": "#Keywords Summary : This feature file contains 2 end to end test scenarios from HomePage to Secure checkout page of rscomponents."
     }
   ],
   "line": 4,
@@ -17,14 +17,14 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 13163301697,
+  "duration": 11529970736,
   "status": "passed"
 });
 formatter.scenario({
   "line": 7,
-  "name": "Order one product",
+  "name": "Search for a product, add to basket and checkout",
   "description": "",
-  "id": "end-to-end-tests;order-one-product",
+  "id": "end-to-end-tests;search-for-a-product,-add-to-basket-and-checkout",
   "type": "scenario",
   "keyword": "Scenario"
 });
@@ -70,10 +70,10 @@ formatter.match({
       "offset": 41
     }
   ],
-  "location": "RSComponentsSteps.java:56"
+  "location": "RSComponentsSteps.java:57"
 });
 formatter.result({
-  "duration": 5795175338,
+  "duration": 6200334599,
   "status": "passed"
 });
 formatter.match({
@@ -87,17 +87,17 @@ formatter.match({
       "offset": 46
     }
   ],
-  "location": "RSComponentsSteps.java:105"
+  "location": "RSComponentsSteps.java:106"
 });
 formatter.result({
-  "duration": 23148093213,
+  "duration": 24155438933,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:123"
+  "location": "RSComponentsSteps.java:124"
 });
 formatter.result({
-  "duration": 6207699133,
+  "duration": 5989408846,
   "status": "passed"
 });
 formatter.match({
@@ -107,10 +107,10 @@ formatter.match({
       "offset": 40
     }
   ],
-  "location": "RSComponentsSteps.java:154"
+  "location": "RSComponentsSteps.java:155"
 });
 formatter.result({
-  "duration": 483276905,
+  "duration": 501668762,
   "status": "passed"
 });
 formatter.match({
@@ -120,104 +120,104 @@ formatter.match({
       "offset": 63
     }
   ],
-  "location": "RSComponentsSteps.java:113"
+  "location": "RSComponentsSteps.java:114"
 });
 formatter.result({
-  "duration": 6724146214,
+  "duration": 6221480721,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:131"
+  "location": "RSComponentsSteps.java:132"
 });
 formatter.result({
-  "duration": 10886771157,
+  "duration": 10791337758,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:141"
+  "location": "RSComponentsSteps.java:142"
 });
 formatter.result({
-  "duration": 889817319,
+  "duration": 1087530517,
   "status": "passed"
 });
 formatter.after({
-  "duration": 960589677,
+  "duration": 1493018146,
   "status": "passed"
 });
 formatter.before({
-  "duration": 10501632409,
+  "duration": 10226217157,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 19,
-  "name": "End to End test 2",
+  "line": 17,
+  "name": "Search and add multiple products to basket, modify basket and checkout",
   "description": "",
-  "id": "end-to-end-tests;end-to-end-test-2",
+  "id": "end-to-end-tests;search-and-add-multiple-products-to-basket,-modify-basket-and-checkout",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
-  "line": 20,
+  "line": 18,
   "name": "I am on Search result page by searching \"GLS LED Lamps\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 21,
+  "line": 19,
   "name": "I add product with stock number \"126-2170\" X \"5\" to basket",
   "keyword": "When "
 });
 formatter.step({
-  "line": 22,
+  "line": 20,
   "name": "I add product with stock number \"123-7945\" X \"8\" to basket",
   "keyword": "When "
 });
 formatter.step({
-  "line": 23,
+  "line": 21,
   "name": "I go to MyBasket from Search results",
   "keyword": "And "
 });
 formatter.step({
-  "line": 24,
+  "line": 22,
   "name": "I should see product with stock number \"126-2170\" in the Basket",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 25,
+  "line": 23,
   "name": "I should see product with stock number \"123-7945\" in the Basket",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 26,
+  "line": 24,
   "name": "I remove product with stock number \"126-2170\" from the basket",
   "keyword": "When "
 });
 formatter.step({
-  "line": 27,
+  "line": 25,
   "name": "I should not see product with stock number \"126-2170\" in the Basket",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 28,
+  "line": 26,
   "name": "I add product with stock number \"786-9083\" X \"20\" in the basket",
   "keyword": "When "
 });
 formatter.step({
-  "line": 29,
+  "line": 27,
   "name": "I should see product with stock number \"786-9083\" in the Basket",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 30,
+  "line": 28,
   "name": "I Checkout securely from MyBasket as guest user with email id \"test@test889.com\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 31,
+  "line": 29,
   "name": "I provide necessary delivery information and Continue to Payment",
   "keyword": "And "
 });
 formatter.step({
-  "line": 32,
+  "line": 30,
   "name": "I should see fields related to payments in Secure Checkout Payment page",
   "keyword": "Then "
 });
@@ -228,10 +228,10 @@ formatter.match({
       "offset": 41
     }
   ],
-  "location": "RSComponentsSteps.java:56"
+  "location": "RSComponentsSteps.java:57"
 });
 formatter.result({
-  "duration": 4799669707,
+  "duration": 5231603005,
   "status": "passed"
 });
 formatter.match({
@@ -245,10 +245,10 @@ formatter.match({
       "offset": 46
     }
   ],
-  "location": "RSComponentsSteps.java:105"
+  "location": "RSComponentsSteps.java:106"
 });
 formatter.result({
-  "duration": 22805059485,
+  "duration": 23823466144,
   "status": "passed"
 });
 formatter.match({
@@ -262,17 +262,17 @@ formatter.match({
       "offset": 46
     }
   ],
-  "location": "RSComponentsSteps.java:105"
+  "location": "RSComponentsSteps.java:106"
 });
 formatter.result({
-  "duration": 18824541372,
+  "duration": 19095771545,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:123"
+  "location": "RSComponentsSteps.java:124"
 });
 formatter.result({
-  "duration": 5622018366,
+  "duration": 5848912167,
   "status": "passed"
 });
 formatter.match({
@@ -282,10 +282,10 @@ formatter.match({
       "offset": 40
     }
   ],
-  "location": "RSComponentsSteps.java:154"
+  "location": "RSComponentsSteps.java:155"
 });
 formatter.result({
-  "duration": 550124245,
+  "duration": 620970816,
   "status": "passed"
 });
 formatter.match({
@@ -295,10 +295,10 @@ formatter.match({
       "offset": 40
     }
   ],
-  "location": "RSComponentsSteps.java:154"
+  "location": "RSComponentsSteps.java:155"
 });
 formatter.result({
-  "duration": 457366627,
+  "duration": 507765614,
   "status": "passed"
 });
 formatter.match({
@@ -308,10 +308,10 @@ formatter.match({
       "offset": 36
     }
   ],
-  "location": "RSComponentsSteps.java:166"
+  "location": "RSComponentsSteps.java:167"
 });
 formatter.result({
-  "duration": 5312477408,
+  "duration": 5963060883,
   "status": "passed"
 });
 formatter.match({
@@ -321,10 +321,10 @@ formatter.match({
       "offset": 44
     }
   ],
-  "location": "RSComponentsSteps.java:173"
+  "location": "RSComponentsSteps.java:174"
 });
 formatter.result({
-  "duration": 4524625870,
+  "duration": 4525001020,
   "status": "passed"
 });
 formatter.match({
@@ -338,10 +338,10 @@ formatter.match({
       "offset": 46
     }
   ],
-  "location": "RSComponentsSteps.java:180"
+  "location": "RSComponentsSteps.java:181"
 });
 formatter.result({
-  "duration": 2456743382,
+  "duration": 2549806485,
   "status": "passed"
 });
 formatter.match({
@@ -351,10 +351,10 @@ formatter.match({
       "offset": 40
     }
   ],
-  "location": "RSComponentsSteps.java:154"
+  "location": "RSComponentsSteps.java:155"
 });
 formatter.result({
-  "duration": 716863219,
+  "duration": 1028172245,
   "status": "passed"
 });
 formatter.match({
@@ -364,28 +364,28 @@ formatter.match({
       "offset": 63
     }
   ],
-  "location": "RSComponentsSteps.java:113"
+  "location": "RSComponentsSteps.java:114"
 });
 formatter.result({
-  "duration": 6590690978,
+  "duration": 6678651471,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:131"
+  "location": "RSComponentsSteps.java:132"
 });
 formatter.result({
-  "duration": 9996561567,
+  "duration": 10955374954,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:141"
+  "location": "RSComponentsSteps.java:142"
 });
 formatter.result({
-  "duration": 1219495360,
+  "duration": 879894170,
   "status": "passed"
 });
 formatter.after({
-  "duration": 830587501,
+  "duration": 808106219,
   "status": "passed"
 });
 formatter.uri("searchPage.feature");
@@ -407,7 +407,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 11117926854,
+  "duration": 10769762417,
   "status": "passed"
 });
 formatter.scenario({
@@ -442,7 +442,7 @@ formatter.match({
   "location": "RSComponentsSteps.java:22"
 });
 formatter.result({
-  "duration": 5272212866,
+  "duration": 5301123210,
   "status": "passed"
 });
 formatter.match({
@@ -452,10 +452,10 @@ formatter.match({
       "offset": 25
     }
   ],
-  "location": "RSComponentsSteps.java:84"
+  "location": "RSComponentsSteps.java:85"
 });
 formatter.result({
-  "duration": 1496489772,
+  "duration": 1639041179,
   "status": "passed"
 });
 formatter.match({
@@ -465,10 +465,10 @@ formatter.match({
       "offset": 27
     }
   ],
-  "location": "RSComponentsSteps.java:91"
+  "location": "RSComponentsSteps.java:92"
 });
 formatter.result({
-  "duration": 3608022112,
+  "duration": 4379545018,
   "status": "passed"
 });
 formatter.match({
@@ -478,22 +478,22 @@ formatter.match({
       "offset": 14
     }
   ],
-  "location": "RSComponentsSteps.java:98"
+  "location": "RSComponentsSteps.java:99"
 });
 formatter.result({
-  "duration": 1920803250,
+  "duration": 1659064015,
   "status": "passed"
 });
 formatter.after({
-  "duration": 698667858,
+  "duration": 752778768,
   "status": "passed"
 });
 formatter.before({
-  "duration": 10970252473,
+  "duration": 10839571719,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 14,
+  "line": 13,
   "name": "Sort search results by price",
   "description": "",
   "id": "search-filter-page-tests;sort-search-results-by-price",
@@ -501,17 +501,17 @@ formatter.scenario({
   "keyword": "Scenario"
 });
 formatter.step({
-  "line": 15,
+  "line": 14,
   "name": "I am on Search result page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 16,
+  "line": 15,
   "name": "I sort by price in \"ascending\" order",
   "keyword": "When "
 });
 formatter.step({
-  "line": 17,
+  "line": 16,
   "name": "The results should sort by price in \"ascending\" order successfully",
   "keyword": "Then "
 });
@@ -519,7 +519,7 @@ formatter.match({
   "location": "RSComponentsSteps.java:22"
 });
 formatter.result({
-  "duration": 6160123494,
+  "duration": 5006782450,
   "status": "passed"
 });
 formatter.match({
@@ -529,10 +529,10 @@ formatter.match({
       "offset": 20
     }
   ],
-  "location": "RSComponentsSteps.java:31"
+  "location": "RSComponentsSteps.java:32"
 });
 formatter.result({
-  "duration": 1756193087,
+  "duration": 1884014299,
   "status": "passed"
 });
 formatter.match({
@@ -542,22 +542,22 @@ formatter.match({
       "offset": 37
     }
   ],
-  "location": "RSComponentsSteps.java:44"
+  "location": "RSComponentsSteps.java:45"
 });
 formatter.result({
-  "duration": 2481749782,
+  "duration": 2486505547,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1232790994,
+  "duration": 676639333,
   "status": "passed"
 });
 formatter.before({
-  "duration": 10268002210,
+  "duration": 10149232754,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 21,
+  "line": 19,
   "name": "Filter by Brand",
   "description": "",
   "id": "search-filter-page-tests;filter-by-brand",
@@ -565,22 +565,22 @@ formatter.scenario({
   "keyword": "Scenario"
 });
 formatter.step({
-  "line": 22,
+  "line": 20,
   "name": "I am on Search result page by searching \"Tape Measures\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 23,
+  "line": 21,
   "name": "I filter by \"Brand\" - \"Stanley\"",
   "keyword": "When "
 });
 formatter.step({
-  "line": 24,
+  "line": 22,
   "name": "Each item displayed in Results should be of Brand \"Stanley\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 25,
+  "line": 23,
   "name": "Number of items displayed in Results should be equal to the number displayed against the brand in the filter selection window",
   "keyword": "And "
 });
@@ -591,10 +591,10 @@ formatter.match({
       "offset": 41
     }
   ],
-  "location": "RSComponentsSteps.java:56"
+  "location": "RSComponentsSteps.java:57"
 });
 formatter.result({
-  "duration": 5238059511,
+  "duration": 5808447670,
   "status": "passed"
 });
 formatter.match({
@@ -608,10 +608,10 @@ formatter.match({
       "offset": 23
     }
   ],
-  "location": "RSComponentsSteps.java:63"
+  "location": "RSComponentsSteps.java:64"
 });
 formatter.result({
-  "duration": 3804428156,
+  "duration": 4566946808,
   "status": "passed"
 });
 formatter.match({
@@ -621,21 +621,21 @@ formatter.match({
       "offset": 51
     }
   ],
-  "location": "RSComponentsSteps.java:70"
+  "location": "RSComponentsSteps.java:71"
 });
 formatter.result({
-  "duration": 3836819180,
+  "duration": 4202678950,
   "status": "passed"
 });
 formatter.match({
-  "location": "RSComponentsSteps.java:77"
+  "location": "RSComponentsSteps.java:78"
 });
 formatter.result({
-  "duration": 2751982045,
+  "duration": 2908997611,
   "status": "passed"
 });
 formatter.after({
-  "duration": 694385599,
+  "duration": 745898926,
   "status": "passed"
 });
 });

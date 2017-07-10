@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -14,6 +15,8 @@ import wrappers.GenericWrapper;
  * @author Thiru
  */
 public class Login_Page extends GenericWrapper {
+	
+	final static Logger logger = Logger.getLogger(Login_Page.class);
 	
 	private String pageHeader = "Log in or continue as a guest";
 	
@@ -34,8 +37,11 @@ public class Login_Page extends GenericWrapper {
 		addExplicitWait(guestCheckoutButton, "clickable", 30);
 		
 		if(!(softTextCheck(pageHeader))){
+			logger.fatal("The expected page headers : " + pageHeader +" not found on the current page. This is NOT Login Page!");
         	throw new RuntimeException("The expected page headers : " + pageHeader +" not found on the current page. This is NOT Login Page!");
         }
+		
+		logger.info("Login_Page() constructor passed.");
 	}
 	
 	
@@ -50,9 +56,15 @@ public class Login_Page extends GenericWrapper {
 	 */
 	public SecureCheckout_Delivery_Page guestCheckout(String guestEmailId){
 		
-		simpleUserAction(guestEmailAddressTextBox, UA_TYPE.CLICK_AND_TYPE, guestEmailId);
-		simpleUserAction(guestCheckoutButton, UA_TYPE.CLICK, null);
+		try {
+			simpleUserAction(guestEmailAddressTextBox, UA_TYPE.CLICK_AND_TYPE, guestEmailId);
+			simpleUserAction(guestCheckoutButton, UA_TYPE.CLICK, null);
+		} catch (Exception e) {
+			logger.fatal("Guest Checkout on Login page failed!");
+        	throw new RuntimeException("Guest Checkout on Login page failed!");
+		}
 		
+		logger.info("guestCheckout in Login_Page passed.");
 		return new SecureCheckout_Delivery_Page();
 	}
 

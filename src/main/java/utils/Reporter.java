@@ -27,8 +27,10 @@ public class Reporter extends GenericWrapper{
 	public static void reportStep(String desc, String status) {
 
 		long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L;
+		String path=null;
         try {
-			FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE) , new File("src/test/resources/reports/extentReports/images/"+number+".jpg"));
+        	path = "src/test/resources/reports/extentReports/images/"+number+".jpg";
+			FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE) , new File(path));
 		} catch (WebDriverException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -37,9 +39,9 @@ public class Reporter extends GenericWrapper{
 		
 		// Write if it is successful or failure or information
 		if(status.toUpperCase().equals("PASS")){
-			test.log(LogStatus.PASS, desc+test.addScreenCapture("./src/test/resources/reports/extentReports/images/"+number+".jpg"));
+			test.log(LogStatus.PASS, desc+test.addScreenCapture(path));
 		}else if(status.toUpperCase().equals("FAIL")){
-			test.log(LogStatus.FAIL, desc+test.addScreenCapture("./src/test/resources/reports/extentReports/images/"+number+".jpg"));
+			test.log(LogStatus.FAIL, desc+test.addScreenCapture(path));
 			throw new RuntimeException("FAILED");
 		}else if(status.toUpperCase().equals("INFO")){
 			test.log(LogStatus.INFO, desc);

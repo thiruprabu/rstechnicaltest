@@ -3,6 +3,7 @@ package pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -23,6 +24,8 @@ import wrappers.GenericWrapper;
  * @author Thiru
  */
 public class SearchResult_Page extends GenericWrapper {
+	
+	final static Logger logger = Logger.getLogger(SearchResult_Page.class);
 	
 	private String pageHeader1 = "Matches";
 	private String pageHeader2 = "Filters";
@@ -104,8 +107,11 @@ public class SearchResult_Page extends GenericWrapper {
 		addExplicitWait(applyFiltersButton, "visible", 30);
 		
 		if(!(softTextCheck(pageHeader1) && softTextCheck(pageHeader2))){
+			logger.fatal("The expected page headers : " + pageHeader1 + "/"+pageHeader2+" not found on the current page. This is NOT Search Result Page!");
         	throw new RuntimeException("The expected page headers : " + pageHeader1 + "/"+pageHeader2+" not found on the current page. This is NOT Search Result Page!");
         }
+		
+		logger.info("SearchResult_Page constructor passed.");
 	}
 	
 	
@@ -117,11 +123,18 @@ public class SearchResult_Page extends GenericWrapper {
 	 */
 	public SearchResult_Page sortResultByPrice(ORDER order){
 		
-		if(order == ORDER.ASCENDING){
-			simpleUserAction(sortPriceAscendingButton, UA_TYPE.CLICK, null);
-		}else{
-			simpleUserAction(sortPriceDescendingButton, UA_TYPE.CLICK, null);
+		try {
+			if(order == ORDER.ASCENDING){
+				simpleUserAction(sortPriceAscendingButton, UA_TYPE.CLICK, null);
+			}else{
+				simpleUserAction(sortPriceDescendingButton, UA_TYPE.CLICK, null);
+			}
+		} catch (Exception e) {
+			logger.fatal("Sort results by price in Search page failed!");
+        	throw new RuntimeException("Sort results by price in Search page failed!");
 		}
+		
+		logger.info("sortResultByPrice in Search Result page passed.");
 	
 		return this;
 	}
@@ -143,13 +156,17 @@ public class SearchResult_Page extends GenericWrapper {
 		
 		if(order == ORDER.ASCENDING){
 			if(!Ordering.natural().isOrdered(prices)){
+				logger.fatal("The products are not sorted in ascending order. Sorting FAILED!");
 				throw new RuntimeException("The products are not sorted in ascending order. Sorting FAILED!");
 			}
 		}else{
 			if(!Ordering.natural().reverse().isOrdered(prices)){
+				logger.fatal("The products are not sorted in descending order. Sorting FAILED!");
 				throw new RuntimeException("The products are not sorted in descending order. Sorting FAILED!");
 			}
 		}
+		
+		logger.info("validateProductPriceSortedOrder in Search Result page passed.");
 		
 		return this;
 	}
@@ -186,6 +203,8 @@ public class SearchResult_Page extends GenericWrapper {
 			}
 		}
 		
+		logger.info("getProductPrices in Search Result page passed.");
+		
 		return prices;
 	}
 	
@@ -203,11 +222,18 @@ public class SearchResult_Page extends GenericWrapper {
 	 */
 	public SearchResult_Page applyFilter(String filterName, String filterOption){
 		
-		simpleUserAction(getLocator(filterNameGenericXPath.replaceAll("#CAPTION#", filterName), BY_TYPE.XPATH), UA_TYPE.CLICK, null);
-		String noOfRecords = getText(getLocator(filterOptionNoOfRecordsGenericXPath.replaceAll("#CAPTION1#", filterName).replaceAll("#CAPTION2#", filterOption), BY_TYPE.XPATH)).replaceAll("[(]", "").replaceAll("[)]", "");
-		addToRunContext("noOfRecordsFiltered", noOfRecords);
-		simpleUserAction(getLocator(filterOptionCheckBoxGenericXPath.replaceAll("#CAPTION1#", filterName).replaceAll("#CAPTION2#", filterOption), BY_TYPE.XPATH), UA_TYPE.CLICK, null);
-		simpleUserAction(applyFiltersButton, UA_TYPE.CLICK, null, ()->addExplicitWait(removeAllFiltersHyperLink, "visible", 30));
+		try {
+			simpleUserAction(getLocator(filterNameGenericXPath.replaceAll("#CAPTION#", filterName), BY_TYPE.XPATH), UA_TYPE.CLICK, null);
+			String noOfRecords = getText(getLocator(filterOptionNoOfRecordsGenericXPath.replaceAll("#CAPTION1#", filterName).replaceAll("#CAPTION2#", filterOption), BY_TYPE.XPATH)).replaceAll("[(]", "").replaceAll("[)]", "");
+			addToRunContext("noOfRecordsFiltered", noOfRecords);
+			simpleUserAction(getLocator(filterOptionCheckBoxGenericXPath.replaceAll("#CAPTION1#", filterName).replaceAll("#CAPTION2#", filterOption), BY_TYPE.XPATH), UA_TYPE.CLICK, null);
+			simpleUserAction(applyFiltersButton, UA_TYPE.CLICK, null, ()->addExplicitWait(removeAllFiltersHyperLink, "visible", 30));
+		} catch (Exception e) {
+			logger.fatal("Apply filter in search page FAILED!");
+			throw new RuntimeException("Apply filter in search page FAILED!");
+		}
+		
+		logger.info("applyFilter in Search Result page passed.");
 		return this;
 	}
 	
@@ -239,6 +265,7 @@ public class SearchResult_Page extends GenericWrapper {
 		if(Integer.parseInt(getFromRunContext("noOfRecordsFiltered")) != totalRecordsCounted){
 			System.out.println("totalRecordsCounted : "+totalRecordsCounted);
 			System.out.println("getFromRunContext(noOfRecordsFiltered) : "+getFromRunContext("noOfRecordsFiltered"));
+			logger.fatal("The number of records found is not equal to the last filter result count. Last applied filter FAILED!");
 			throw new RuntimeException("The number of records found is not equal to the last filter result count. Last applied filter FAILED!");
 		}
 		
@@ -249,8 +276,11 @@ public class SearchResult_Page extends GenericWrapper {
 		if(Integer.parseInt(getFromRunContext("noOfRecordsFiltered")) != noOfRecordsInHeader){
 			System.out.println("noOfRecordsInHeader : "+noOfRecordsInHeader);
 			System.out.println("getFromRunContext(noOfRecordsFiltered) : "+getFromRunContext("noOfRecordsFiltered"));
+			logger.fatal("The number of records found in the search header is not equal to the last filter result count. Last applied filter FAILED!");
 			throw new RuntimeException("The number of records found in the search header is not equal to the last filter result count. Last applied filter FAILED!");
 		}
+		
+		logger.info("validateAppliedFilterByResultCount in Search Result page passed.");
 		
 		return this;
 	}
@@ -280,6 +310,7 @@ public class SearchResult_Page extends GenericWrapper {
 				if(!currentRecordBrand.equalsIgnoreCase(brandName)){
 					System.out.println("Current record Brand : "+currentRecordBrand);
 					System.out.println("FilterBrand Brand : "+brandName);
+					logger.fatal("Search results contain brands other than the one filtered. Filter by brand FAILED!");
 					throw new RuntimeException("Search results contain brands other than the one filtered. Filter by brand FAILED!");
 				}
 				totalRecordsCounted++;
@@ -290,8 +321,11 @@ public class SearchResult_Page extends GenericWrapper {
 		if(totalRecordsCounted != Integer.parseInt(getFromRunContext("noOfRecordsFiltered"))){
 			System.out.println("totalRecordsCounted : "+totalRecordsCounted);
 			System.out.println("getFromRunContext(noOfRecordsFiltered) : "+getFromRunContext("noOfRecordsFiltered"));
+			logger.fatal("The Brand matches but the number of records found is not equal to the last filter result count. Filter by brand FAILED!");
 			throw new RuntimeException("The Brand matches but the number of records found is not equal to the last filter result count. Filter by brand FAILED!");
 		}
+		
+		logger.info("validateAppliedFilterByBrand in Search Result page passed.");
 		
 		return this;
 	}
@@ -306,6 +340,8 @@ public class SearchResult_Page extends GenericWrapper {
 		if(!getText(firstPageIcon).contains("disabled")){
 			simpleUserAction(firstPageIcon, UA_TYPE.CLICK, null, ()->addExplicitWaitForAttributeValue(firstPageIcon, "class", "paginationIcon firstPage disabled", 30));
 		}
+		
+		logger.info("goToFirstPage in Search Result page passed.");
 	}
 	
 	
@@ -318,9 +354,16 @@ public class SearchResult_Page extends GenericWrapper {
 	 */
 	public SearchResult_Page setResultsPerPage(String count){
 		
-		simpleUserAction(resultsPerPageDropDownButton, UA_TYPE.CLICK, null);
-		delay(500);
-		simpleUserAction(getLocator(resultsPerPageDropDownOptionGenericXPath.replaceAll("#CAPTION#", count), BY_TYPE.XPATH), UA_TYPE.CLICK, null, ()->addExplicitWaitForTextValue(resultsPerPageSelectedValue, count, 30));
+		try {
+			simpleUserAction(resultsPerPageDropDownButton, UA_TYPE.CLICK, null);
+			delay(500);
+			simpleUserAction(getLocator(resultsPerPageDropDownOptionGenericXPath.replaceAll("#CAPTION#", count), BY_TYPE.XPATH), UA_TYPE.CLICK, null, ()->addExplicitWaitForTextValue(resultsPerPageSelectedValue, count, 30));
+		} catch (Exception e) {
+			logger.fatal("Results per page setting FAILED!");
+			throw new RuntimeException("Results per page setting FAILED!");
+		}
+		
+		logger.info("setResultsPerPage in Search Result page passed.");
 		return this;
 	}
 	
@@ -341,11 +384,14 @@ public class SearchResult_Page extends GenericWrapper {
 		
 		if((!(count.equalsIgnoreCase(resultsPerPageCount))) || (!(count.equalsIgnoreCase(recordsCount)))){
 			
-			System.out.println("count : "+count);
-			System.out.println("resultsPerPageCount : "+resultsPerPageCount);
-			System.out.println("recordsCount : "+recordsCount);
+			logger.info("count : "+count);
+			logger.info("resultsPerPageCount : "+resultsPerPageCount);
+			logger.info("recordsCount : "+recordsCount);
+			logger.fatal("Results found per page is not relevant to the value set in the Results per page dropdown.");
 			throw new RuntimeException("Results found per page is not relevant to the value set in the Results per page dropdown.");
 		}
+		
+		logger.info("validateResultsPerPage in Search Result page passed.");
 		
 		return this;
 	}
@@ -390,8 +436,11 @@ public class SearchResult_Page extends GenericWrapper {
 
 		
 		if(!added){
+			logger.info("Cannot find any product with the given stock number to add to basket!");
 			throw new RuntimeException("Cannot find any product with the given stock number to add to basket!");
 		}
+		
+		logger.info("addToBasket in Search Result page passed.");
 		
 		return this;
 	}
@@ -405,8 +454,15 @@ public class SearchResult_Page extends GenericWrapper {
 	 * @return
 	 */
 	public MyBasket_Page goToMyBasket(){
-		scrollTo(basket);
-		simpleUserAction(basket, UA_TYPE.CLICK, null);
+		try {
+			scrollTo(basket);
+			simpleUserAction(basket, UA_TYPE.CLICK, null);
+		} catch (Exception e) {
+			logger.info("Cannot go to MyBasket from search page!");
+			throw new RuntimeException("Cannot go to MyBasket from search page!");
+		}
+		
+		logger.info("goToMyBasket in Search Result page passed.");
 		return new MyBasket_Page();
 	}
 	
