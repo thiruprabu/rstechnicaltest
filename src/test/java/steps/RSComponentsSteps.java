@@ -194,7 +194,7 @@ public class RSComponentsSteps  extends GenericWrapper implements En  {
 	@cucumber.api.java.Before
 	public void beforeScenario(Scenario scenario) {
 		
-		Reporter.startResult(scenario.getName());
+		Reporter.startResult(scenario.getName().replaceAll(" ", ""));
 		Reporter.startTestCase(scenario.getName(), scenario.getName());
 		
 		invokeApp("firefox");

@@ -2,8 +2,12 @@ Steps to run the test:
 
 Clone the repository locally.
 Go to the project root folder from command prompt
-Execute the command : 'mvn test' and hit enter
-After execution, the cucumber test report can be found at : ./src/test/resources/cucumberReports/index.html
+Feature files are present under : src/test/java/features
+Execution of test can be run from feature file(if the IDE has cucumber plugin : by right click -> run as -> cucumber feature)
+Execution can also be done by running the TestRunner class(which will execute all the feature files)
+Maven can also be used to run tests from command prompt.
+After execution, the cucumber test report can be found at : ./src/test/resources/reports/cucumberReports/index.html
+After execution, extent report can be found at : ./src/test/resources/reports/extentReports/scenarioname.html
 Logs can be found at : ./src/test/resources/logs
 
 Comments:
